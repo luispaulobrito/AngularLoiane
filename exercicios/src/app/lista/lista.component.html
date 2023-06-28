@@ -1,0 +1,5 @@
+<ul>
+    <li *ngFor="let item of listaDeItens" [class.selecionado]="item.selecionado" (click)="selecionarItem(item)">
+        {{ item.nome }}
+    </li>
+</ul>

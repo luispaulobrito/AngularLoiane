@@ -1,0 +1,5 @@
+<div [style.background-color]="corFundo">
+    <label for="cor">Digite a cor do background: </label>
+    <input type="text" placeholder="Digite uma cor" [(ngModel)]="corDigitada">
+    <button (click)="alterarCor()" >Alterar background</button>
+</div>
