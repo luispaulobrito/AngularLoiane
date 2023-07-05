@@ -86,3 +86,23 @@
         </div>
     </article>
 </section>-->
+<section>
+    <article>
+        <h3>Two-way data biding</h3>
+        <div>
+
+            <input type="text" [(ngModel)]="nome">
+    
+            <p>Você digitou: {{ nome }}</p>
+
+        </div>
+
+        <div>
+            <input type="text" [(ngModel)]="pessoa.nome">
+            <input type="text" [(ngModel)]="pessoa.idade">
+
+            <p>Meu nome é {{ pessoa.nome }} e tenho {{ pessoa.idade }}</p>
+        </div>
+
+    </article>
+</section>

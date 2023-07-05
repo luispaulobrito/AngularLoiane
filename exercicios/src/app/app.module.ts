@@ -8,6 +8,7 @@ import { BoasVindasComponent } from './boas-vindas/boas-vindas.component';
 import { BotaoComponent } from './botao/botao.component';
 import { BackgroundComponent } from './background/background.component';
 import { ListaComponent } from './lista/lista.component';
+import { ParagrafoDinamicoComponent } from './paragrafo-dinamico/paragrafo-dinamico.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ListaComponent } from './lista/lista.component';
     BoasVindasComponent,
     BotaoComponent,
     BackgroundComponent,
-    ListaComponent
+    ListaComponent,
+    ParagrafoDinamicoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,14 @@
+<input type="text" [(ngModel)]="texto">
+<p>
+    {{ texto }}
+</p>
+
+
+<input type="text" [(ngModel)]="campoDigitado">
+<button (click)="limpar()">Limpar</button>
+
+<br><br>
+
+<input type="number" [(ngModel)]="numero">
+<button (click)="incrementar()">Incrementar</button>
+<button (click)="limparNumero()">Limpar</button>

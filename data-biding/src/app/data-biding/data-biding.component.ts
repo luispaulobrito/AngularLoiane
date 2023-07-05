@@ -13,6 +13,12 @@ export class DataBidingComponent {
   valorAtual: string = '';
   valorSalvo: string = '';
   isMouseOver: boolean = false;
+  nome: string = 'abc';
+  pessoa: any={
+    nome: 'Luis',
+    idade: 20
+  }
+
 
   getValor(){
     return 1;
