@@ -1,2 +1,5 @@
-<app-data-biding></app-data-biding>
+<!-- <app-data-biding></app-data-biding> -->
 
+<app-ciclo [valorInicial]="valor" *ngIf="!deletaCiclo"></app-ciclo>
+<button (click)="mudarValor()">Mudar valor</button>
+<button (click)="destruirCiclo()">Deletar</button>

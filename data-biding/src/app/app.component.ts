@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'data-biding';
+
+  valor: number = 5;
+  deletaCiclo: boolean = false;
+
+  mudarValor(){
+    this.valor++;
+  }
+  destruirCiclo(){
+    this.deletaCiclo = true;
+  }
 }
