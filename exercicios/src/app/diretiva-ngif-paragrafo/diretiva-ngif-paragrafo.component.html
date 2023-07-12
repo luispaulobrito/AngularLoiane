@@ -1,0 +1,32 @@
+<h1>Exerícios Diretivas</h1>
+<h2>NgIf</h2>
+
+<p>01:</p>
+<p *ngIf="mostrarParagrafo">Exibindo o conteúdo condicionalmente</p>
+
+<p>02:</p>
+<input type="text" *ngIf="mostrarInput">
+<button (click)="mostrarOcultarInput()">Mostrar/Ocultar Input</button>
+
+<p>03:</p>
+<h2>Nomes Masculinos:</h2>
+<div *ngIf="nomesMasculinos.length > 0">
+    <ul *ngFor="let nome of nomesMasculinos">
+        <li> {{ nome }} </li>
+    </ul>
+</div>
+
+<div *ngIf="nomesMasculinos.length == 0">
+    <p>Lista vazia</p>
+</div>
+
+<h2>Nomes Femininos:</h2>
+<div *ngIf="nomesFemininos.length > 0">
+    <ul *ngFor="let nome of nomesFemininos">
+        <li> {{ nome }} </li>
+    </ul>
+</div>
+
+<div *ngIf="nomesFemininos.length == 0">
+        <p>Lista vazia</p>
+</div>

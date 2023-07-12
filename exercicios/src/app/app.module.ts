@@ -9,6 +9,7 @@ import { BotaoComponent } from './botao/botao.component';
 import { BackgroundComponent } from './background/background.component';
 import { ListaComponent } from './lista/lista.component';
 import { ParagrafoDinamicoComponent } from './paragrafo-dinamico/paragrafo-dinamico.component';
+import { DiretivaNgifParagrafoComponent } from './diretiva-ngif-paragrafo/diretiva-ngif-paragrafo.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ParagrafoDinamicoComponent } from './paragrafo-dinamico/paragrafo-dinam
     BotaoComponent,
     BackgroundComponent,
     ListaComponent,
-    ParagrafoDinamicoComponent
+    ParagrafoDinamicoComponent,
+    DiretivaNgifParagrafoComponent
   ],
   imports: [
     BrowserModule,
