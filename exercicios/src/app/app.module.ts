@@ -10,6 +10,7 @@ import { BackgroundComponent } from './background/background.component';
 import { ListaComponent } from './lista/lista.component';
 import { ParagrafoDinamicoComponent } from './paragrafo-dinamico/paragrafo-dinamico.component';
 import { DiretivaNgifParagrafoComponent } from './diretiva-ngif-paragrafo/diretiva-ngif-paragrafo.component';
+import { DiretivaNgswitchcaseComponent } from './diretiva-ngswitchcase/diretiva-ngswitchcase.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { DiretivaNgifParagrafoComponent } from './diretiva-ngif-paragrafo/direti
     BackgroundComponent,
     ListaComponent,
     ParagrafoDinamicoComponent,
-    DiretivaNgifParagrafoComponent
+    DiretivaNgifParagrafoComponent,
+    DiretivaNgswitchcaseComponent
   ],
   imports: [
     BrowserModule,

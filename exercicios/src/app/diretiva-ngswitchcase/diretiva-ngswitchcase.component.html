@@ -1,0 +1,45 @@
+<h2>NgSwitchCase</h2>
+<p>01 - Digite o dia da semana:</p>
+<input type="number" [(ngModel)]="diaSemana">
+<div>
+     <span [ngSwitch]="diaSemana">
+        <p *ngSwitchCase=1>
+            O dia da semana é Domingo.
+        </p>
+        <p *ngSwitchCase=2>
+            O dia da semana é Segunda.
+        </p>
+        <p *ngSwitchCase=3>
+            O dia da semana é Terça.
+        </p>
+        <p *ngSwitchCase=4>
+            O dia da semana é Quarta.
+        </p>
+        <p *ngSwitchCase=5>
+            O dia da semana é Quinta.
+        </p>
+        <p *ngSwitchCase=6>
+            O dia da semana é Sexta.
+        </p>
+        <p *ngSwitchCase=7>
+            O dia da semana é Sábado.
+        </p>
+        <p *ngSwitchDefault>
+            Dia não existe na semana.
+        </p>
+    </span>>
+</div>
+
+<p>02 - Cores</p>
+<input type="text" [(ngModel)]="corSelecionada" [ngSwitch]="corSelecionada" ngClass="cor">
+<ul>
+    <li *ngFor="let cor of cores" [ngClass]="cor">
+        {{ cor }}
+    </li>
+</ul>
+
+<div [ngClass]="corSelecionada">
+    <select (change)="selecionarCor($event.target.value)">
+        <option *ngFor="let cor of cores">{{ cor }}</option>
+    </select>
+</div>
