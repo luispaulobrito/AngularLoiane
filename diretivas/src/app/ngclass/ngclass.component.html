@@ -1,0 +1,9 @@
+<h1>
+    <i class="fas fa-star"
+        [ngClass]="{
+            'fas': meuFavorito,
+            'far': !meuFavorito
+        }"
+        (click)="favoritar()"
+    ></i>
+</h1>
