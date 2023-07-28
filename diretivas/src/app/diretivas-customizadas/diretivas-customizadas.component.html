@@ -3,3 +3,16 @@
 <button appFundoAmarelo>Botão amarelo</button>
 
 <p appHighlitghtMouse>Texto com highlight quando passo o mouse.</p>
+
+<p appHighlight [defaultColor]="'grey'" [highlightColor]="'red'">Texto com highlight com cores customizadas.</p>
+
+
+<div *ngIf="mostrarCursos">
+    Lista de cursos aqui
+</div>
+<div *ngElse="mostrarCursos">
+    Naõ existem cursos para serem listados
+</div>
+
+<!-- botao -->
+<button (click)="onMostrarCursos()">Mostrar ou esconder cursos</button>
