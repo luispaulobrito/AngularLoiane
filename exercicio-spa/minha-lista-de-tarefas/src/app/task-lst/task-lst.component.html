@@ -1,0 +1,19 @@
+<section>
+
+    <h2>Minha Lista de Tarefas</h2>
+    
+    <div class="input-group mb-3">
+        <input class="form-control" placeholder="Tarefa" type="text" [(ngModel)]="novaTarefa" (keyup.enter)="adicionarTarefa()">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" (click)="adicionarTarefa()">Adicionar</button>
+        </div>
+    </div>
+        
+    
+    <ul>
+        <li *ngFor="let tarefa of tarefas">
+            {{ tarefa }}
+            <button class="btn btn-danger" (click)="removerTarefa(tarefa)">Remover</button>
+        </li>
+    </ul>
+</section>
