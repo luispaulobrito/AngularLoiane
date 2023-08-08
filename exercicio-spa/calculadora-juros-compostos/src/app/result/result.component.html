@@ -1,0 +1,26 @@
+  <div class="container mt-2 pb-4">
+    <h2 class="mb-3">Resultado:</h2>
+
+    <table class="table table-striped table-bordered table-responsive table-rounded">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Evento</th>
+            <th scope="col">Valores</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Total investido:</td>
+            <td>{{ getTotalInvestido() | formatCurrency }}</td>
+          </tr>
+          <tr>
+            <td>Total ganho em juros:</td>
+            <td>{{ getGanhoJuros() | formatCurrency }}</td>
+          </tr>
+          <tr>
+            <td>Total:</td>
+            <td>{{ getMontanteFinal() | formatCurrency }}</td>
+          </tr>
+        </tbody>
+      </table>
+  </div>

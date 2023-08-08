@@ -1,0 +1,49 @@
+    <div class="container pt-5">
+      <h1 class="mb-4">Calculadora de Juros Compostos</h1>
+      <form>
+        <div class="row">
+            <div class="form-group col-6">
+                <label for="valorInicial">Valor Inicial</label>
+                <input [(ngModel)]="valorInicial" type="number" class="form-control" id="valorInicial" name="valorInicial" required>
+            </div>
+            <div class="form-group  col-6">
+                <label for="mensal">Valor Mensal</label>
+                <input [(ngModel)]="valorMensal" type="number" class="form-control" id="mensal" name="mensal" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-4">
+                <label for="taxaJuros">Taxa de Juros</label>
+                <input [(ngModel)]="taxaDeJuros" type="number" class="form-control" id="taxaJuros" name="taxaJuros" required>
+            </div>
+            
+            <div class="form-group  col-2">
+              <label for="tipoTaxa">%</label>
+              <select [(ngModel)]="tipoTaxa" class="form-control" id="tipoTaxa" name="tipoTaxa" required>
+                <option value="mensal">Mensal</option>
+                <option value="anual">Anual</option>
+              </select>
+            </div>
+
+            <div class="form-group  col-4">
+                <label for="periodo">Período (meses ou anos)</label>
+                <input [(ngModel)]="periodo" type="number" class="form-control" id="periodo" name="periodo" required>
+            </div>
+
+            <div class="form-group  col-2">
+              <label for="tipoPeriodo">Tipo de Período</label>
+              <select [(ngModel)]="tipoPeriodo" class="form-control" id="tipoPeriodo" name="tipoPeriodo" required>
+                <option value="meses">Meses</option>
+                <option value="anos">Anos</option>
+              </select>
+            </div>
+
+        </div>
+                    
+        <div class="text-center">
+          <button type="reset" class="btn btn-secondary">Limpar</button>
+          <button (click)="calcularTotal()" (click)="calcularTotalInvestido()" (click)="calcularGanhoJuros()" type="submit" class="btn btn-primary m-4">Calcular</button>
+        </div>
+      </form>
+    </div>

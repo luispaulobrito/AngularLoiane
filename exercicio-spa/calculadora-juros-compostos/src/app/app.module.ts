@@ -3,28 +3,24 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CursosService } from './cursos/cursos.service';
-import { CriarCursoModule } from './criar-curso/criar-curso.module';
-import { CursosModule } from './cursos/cursos.module';
-import { LogService } from './shared/log.service';
-
+import { InputFormComponent } from './input-form/input-form.component';
+import { ResultComponent } from './result/result.component';
+import { FormsModule } from '@angular/forms';
+import { FormatCurrencyPipe } from './format-currency.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
+    InputFormComponent,
+    ResultComponent,
+    FormatCurrencyPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CriarCursoModule,
-    CursosModule
+    FormsModule
   ],
-  providers: [
-    LogService
-  ],
-  // providers: [
-  //   CursosService
-  // ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
