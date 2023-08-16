@@ -1,7 +1,7 @@
 <p>Lista de Cursos:</p>
 
 <div class="list-group">
-    <a *ngFor="let curso of cursos" href="#" class="list-group-item list-group-item-action" [routerLink]="['/curso',curso.id]">
+    <a *ngFor="let curso of cursos" href="#" class="list-group-item list-group-item-action" [routerLink]="['/cursos',curso.id]">
         {{ curso.nome }}
     </a>
 </div>
