@@ -1,3 +1,5 @@
+import { Usuario } from './usuario';
+import { AuthService } from './auth.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+
+  usuario: Usuario = new Usuario();
+
+  constructor(private authService: AuthService){}
+
+  fazerLogin(){
+    this.authService.fazerLogin(this.usuario);
+  }
 
 }

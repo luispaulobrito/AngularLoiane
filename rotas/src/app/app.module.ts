@@ -6,8 +6,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-// import { CursosModule } from './cursos/cursos.module';
-// import { AlunosModule } from './alunos/alunos.module';
+import { AuthService } from './login/auth.service';
+import { FormsModule } from '@angular/forms';
+import { AuthGuard } from './guards/auth-guard';
 
 @NgModule({
   declarations: [
@@ -19,10 +20,11 @@ import { LoginComponent } from './login/login.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    // CursosModule,
-    // AlunosModule
+    FormsModule
   ],
   providers: [
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
