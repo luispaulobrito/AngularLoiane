@@ -7,7 +7,7 @@
 
 <div class="mb-3">
     <label for="nome" class="active">Nome</label>
-    <input [(ngModel)]="aluno.nome" type="text" class="form-control" id="nome" aria-describedby="emailHelp">
+    <input [(ngModel)]="aluno.nome" type="text" class="form-control" id="nome" aria-describedby="emailHelp" (input)="onInput()">
 </div>
 <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email</label>
