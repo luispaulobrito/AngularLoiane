@@ -4,23 +4,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TemplateFormComponent } from './template-form/template-form.component';
-import { DataFormComponent } from './data-form/data-form.component';
 import { FormsModule } from '@angular/forms';
 import { CampoControlErrorComponent } from './campo-control-error/campo-control-error.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { DataFormModule } from './data-form/data-form.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     TemplateFormComponent,
-    DataFormComponent,
     CampoControlErrorComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    DataFormModule
   ],
   providers: [],
   bootstrap: [AppComponent]
