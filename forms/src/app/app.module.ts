@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CampoControlErrorComponent } from './shared/campo-control-error/campo-control-error.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DataFormModule } from './data-form/data-form.module';
+import { DropdownService } from './shared/services/dropdown.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { DataFormModule } from './data-form/data-form.module';
     TemplateFormModule,
     DataFormModule
   ],
-  providers: [],
+  providers: [DropdownService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
