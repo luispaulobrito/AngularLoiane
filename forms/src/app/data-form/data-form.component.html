@@ -20,6 +20,12 @@
             </app-campo-control-error>
             <app-campo-control-error [mostrarErro]="verificaEmailInvalido()" mensagemErro="O email é inválido.">
             </app-campo-control-error>
+            <app-campo-control-error [mostrarErro]="formulario.get('email')?.status === 'PENDING'" mensagemErro="Validando email">
+            </app-campo-control-error>
+            <app-campo-control-error [mostrarErro]="formulario.get('email')?.status === 'VALID'" mensagemErro="Email válido">
+            </app-campo-control-error>
+            <app-campo-control-error [mostrarErro]="formulario.get('email')?.status === 'INVALID'" mensagemErro="Email já cadastrado">
+            </app-campo-control-error>
         </div>
     </div>
     
@@ -83,10 +89,63 @@
                 <app-campo-control-error [mostrarErro]="verificaValidTouched('endereco.estado')" mensagemErro="Estado inválido.">
                 </app-campo-control-error>
             </div>
+            
+            <div class="col-md-3" [ngClass]="aplicaCssErro('cargo')">
+                <label for="cargo" class="control-label">Cargo</label>
+                <select class="form-control" id="cargo" formControlName="cargo" [compareWith]="compararCargos">
+                    <option *ngFor="let cargo of cargos" [ngValue]="cargo">{{ cargo.desc }}</option>
+                </select>
+            </div>
+            
+            <div class="col-md-3" [ngClass]="aplicaCssErro('tecnologias')">
+                <label for="tecnologias" class="control-label">Tecnologias</label>
+                <select multiple class="form-control" id="tecnologias" formControlName="tecnologias">
+                    <option *ngFor="let tecnologia of tecnologias" [value]="tecnologia.nome">{{ tecnologia.desc }}</option>
+                </select>
+            </div>
+            
+            <div class="col-md-3" [ngClass]="aplicaCssErro('newsletter')">
+                <label for="newsletter" class="control-label">Newsletter</label>    
+                <div id="newsletter" class="row">
+                    <div class="col-sm-4" *ngFor="let item of newsletterOp">
+                        <label class="radio-inline">
+                            <input type="radio" [value]="item.valor " formControlName="newsletter"/>{{ item.desc }}
+                        </label>
+                    </div>
+                </div>
+            </div>
+
         </div>
         
+        <div class="form-group">
+            <div class="col-md-3" [ngClass]="aplicaCssErro('termos')">
+                <div class="checkbox">
+                    <label class="checbbox-inline">
+                        <input type="checkbox" formControlName="termos">Aceito os termos.
+                    </label>
+                    <app-campo-control-error [mostrarErro]="!formulario.get('termos')" mensagemErro="Por favor, aceite os termos.">
+                    </app-campo-control-error>
+                </div>
+            </div>
+        </div>
+        
+        <!-- <div class="form-group">
+            <div class="col-md-3" [ngClass]="aplicaCssErro('frameworks')">
+                <label for="frameworks">Frameworks</label>
+                <div id="frameworks" class="row">
+                    <div class="checkbox col-sm-3" formArrayName="frameworks" *ngFor="let item of formulario.get('frameworks').controls; let i = index">
+                        <label class="checbbox-inline">
+                            <input type="checkbox" [formControlName]="i">{{ frameworks[i] }}
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
         <button type="submit" class="btn btn-primary m-2">Submit</button>
-        <button (click)="resetar()" class="btn btn-secondary">Cancelar</button>
+        <button (click)="resetar()" class="btn btn-default">Cancelar</button>
+        <button (click)="setarCargo()" class="btn btn-info">Cargo</button>
+        <button (click)="setarTecnologias()" class="btn btn-info">Tecnologias</button>
         
         <app-form-debug [form]="formulario"></app-form-debug>
     </div>
