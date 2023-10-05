@@ -4,7 +4,7 @@ import { DropdownService } from './../shared/services/dropdown.service';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Observable, map } from 'rxjs';
+import { Observable, distinctUntilChanged, map, tap } from 'rxjs';
 import { EstadoBr } from '../shared/model/estado-br.model';
 
 @Component({
@@ -61,6 +61,14 @@ export class DataFormComponent {
         termos: [false, Validators.pattern],
         // frameworks: this.buildFrameworks()
       });
+
+      this.formulario.get('endereco.cep')?.statusChanges
+        .pipe(
+          distinctUntilChanged(),
+          tap(value => console.log('Valor CEP: ', value))
+          )
+          .subscribe()
+      
       
       // buildFrameworks() {
       //   const values = this.frameworks.map(v => new FormControl(false));
@@ -78,6 +86,7 @@ export class DataFormComponent {
     //   })
     // });
   }
+
 
   onSubmit() {
     console.log(this.formulario);

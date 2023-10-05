@@ -5,8 +5,8 @@
         </div>
         <div class="col-sm-12">
             <input type="text" class="form-control" id="nome" placeholder="Nome" formControlName="nome">
-            <app-campo-control-error [mostrarErro]="verificaValidTouched('nome')" mensagemErro="Preencha o nome.">
-            </app-campo-control-error>
+            <app-error-msg [control]="formulario.get('nome')" label="Nome">
+            </app-error-msg>
         </div>
     </div>
     

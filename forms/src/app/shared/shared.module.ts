@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormDebugComponent } from './form-debug/form-debug.component';
 import { CampoControlErrorComponent } from './campo-control-error/campo-control-error.component';
 import {  HttpClientModule } from '@angular/common/http';
+import { ErrorMsgComponent } from './error-msg/error-msg.component';
 
 
 
@@ -10,6 +11,7 @@ import {  HttpClientModule } from '@angular/common/http';
   declarations: [
     FormDebugComponent,
     CampoControlErrorComponent,
+    ErrorMsgComponent,
   ],
   imports: [
     CommonModule,
@@ -17,7 +19,8 @@ import {  HttpClientModule } from '@angular/common/http';
   ],
   exports: [
     FormDebugComponent,
-    CampoControlErrorComponent
+    CampoControlErrorComponent,
+    ErrorMsgComponent
   ]
 })
 export class SharedModule { }
